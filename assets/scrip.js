@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    componentsChargers("init");
+    componentsChargers("characters");
 });
 
 const componentsChargers = (component) => {

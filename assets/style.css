@@ -48,5 +48,58 @@ main{
     cursor: pointer;
 }
 
+/*Termino el css del componente Init*/
+
+#characters{
+    width: 100%;
+    height: 100vh; 
+}
+
+#characters .up{
+    background-color: #fff;
+    width: 100%;
+    height: 80px;
+}
+
+#characters .down{
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 20px;
+}
+
+#characters .down .card{
+    width: 300px;
+    height: 500px;
+}
+
+#characters .down .card .back{
+    width: 300px;
+    height: 320px;
+    background-image: url('https://web.dragonball-api.com/images-compress/89980.webp');
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#characters .down .card .back img{
+    height: 80%;
+}
+
+#characters .down .card .back img:hover{
+    height: 100%;
+}
+
+#characters .down .card .description{
+    width: 300px;
+    height: 180px;
+    background-color: #3c3e44;
+    border-radius: 0 0 10px 10px;
+}
+
+
+
 
 
