@@ -7,5 +7,46 @@
 main{
     width: 100%;
     height: 100vh;
-    background-color:#dcdcdc;
+    background-color:#272b33;
 }
+
+#init{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#init div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#init div img{
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+#init div button{
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #030f19;
+    border-style: solid;
+    font-size: 25px;
+    color: #030f19;
+}
+
+
+#init div button:hover{
+    background-color: #ff2039;
+    border-color: #030f19;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
