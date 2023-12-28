@@ -66,11 +66,15 @@ main{
     width: 100%;
     height: calc(100vh - 80px);
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #characters .down .card{
     width: 300px;
     height: 500px;
+    margin-bottom: 30px;
 }
 
 #characters .down .card .back{
@@ -90,6 +94,7 @@ main{
 
 #characters .down .card .back img:hover{
     height: 100%;
+    transition-duration: 0.5s;
 }
 
 #characters .down .card .description{
@@ -97,7 +102,29 @@ main{
     height: 180px;
     background-color: #3c3e44;
     border-radius: 0 0 10px 10px;
+    padding: 10px;
 }
+
+#characters .down .card .description .titulo{
+    color: #fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+#characters .down .card .description .subtitulo{
+    color: #fbc02d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#characters .down .card .description .name{
+    color: #fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 2px 0 8px 0;
+    
+}
+
 
 
 
