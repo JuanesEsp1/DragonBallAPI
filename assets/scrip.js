@@ -1,6 +1,11 @@
 $( document ).ready(function() {
     componentsChargers("characters");
-    getCharacter();
+    getCharacter(null);
+
+  
+
+   
+
 });
 
 const componentsChargers = (component) => {
@@ -8,12 +13,20 @@ const componentsChargers = (component) => {
         url: "components/"+component+".php"
     }).done(function(res) {
         $("#main").html(res);
+        processFrm();
     });
 }
 
 
-const getCharacter = () => {
-    const apiUrl = "https://dragonball-api.com/api/characters";
+const getCharacter = (url) => {
+    console.log(url);
+    let apiUrl = "";
+    if (url==null) {
+        apiUrl = "https://dragonball-api.com/api/characters";
+    } else {
+        apiUrl=url;
+    }
+    
     fetch(apiUrl)
     .then(response => response.json()) 
     .then(data => processCharacter(data.items)) 
@@ -59,3 +72,30 @@ const processCharacter = (characters) => {
     </div>`);
     });
 }
+
+const activeMenu = () =>{
+    $("#filters").toggle();
+}
+
+
+const processFrm =() =>{
+    $("#frm").submit(function(e) {
+        e.preventDefault();
+
+        let name  =  $("#frmName").val();
+        let race = $("#frmRace").val();
+        let gender = $("#frmGender").val();
+        let group = $("#frmGroup").val();
+
+        console.log(name);
+        console.log(race);
+        console.log(gender);
+        console.log(group);
+
+        let endPoint = "https://dragonball-api.com/api/characters?name="+name;
+
+        getCharacter(endPoint);
+    })
+}
+
+

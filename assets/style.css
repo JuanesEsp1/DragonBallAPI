@@ -56,7 +56,7 @@ main{
 }
 
 #characters .up{
-    background-color: #fff;
+    background-color: #ff8609;
     width: 100%;
     height: 80px;
 }
@@ -125,8 +125,82 @@ main{
     
 }
 
+/*Se termino el css del componente characters*/
 
+#header{
+    height: 100%;
+    background-color: #ff7d0b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+#header .logo{
+    height: 100%;
+}
 
+#header .logo img{
+    height: 100%;
+}
 
+#header .title{
+    color: #fff;
+    font-size: 40px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
+#header .menu img{
+    cursor: pointer;
+    max-height: 80px;
+}
+
+#filters{
+    background-color: rgba(34, 47, 62,0.8);
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+#filters .form{
+    height: 100%;
+    width: 300px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+#filter .form .name-serched input{
+    padding: 60px;
+}
+
+#filter .form .margin{
+    padding: 60px;
+}
+
+.marginB{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.w-full{
+    width: 200px !important;
+    height: 30px !important;
+}
+.subtitle{
+    font-weight: 500;
+    font-size: 18px;
+    color:rgba(34, 47, 62,1.0);
+}
+
+.btn{
+    height: 30px;
+    background-color: #ff7d0b;
+    border:none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+}

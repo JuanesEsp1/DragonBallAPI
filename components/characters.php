@@ -1,11 +1,15 @@
 <section id="characters">
     <div class="up">
-        arriba
+        <?php
+        require "header.php";
+        ?>
     </div>
 
     <div class="down" id="charactersCards">
         
     </div>
-
+    <?php 
+    require "filters.php";
+    ?>
 
 </section>
