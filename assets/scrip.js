@@ -1,11 +1,6 @@
 $( document ).ready(function() {
     componentsChargers("characters");
-    getCharacter(null);
-
-  
-
-   
-
+    getCharacter();
 });
 
 const componentsChargers = (component) => {
@@ -18,14 +13,8 @@ const componentsChargers = (component) => {
 }
 
 
-const getCharacter = (url) => {
-    console.log(url);
-    let apiUrl = "";
-    if (url==null) {
-        apiUrl = "https://dragonball-api.com/api/characters";
-    } else {
-        apiUrl=url;
-    }
+const getCharacter = () => {
+    apiUrl = "https://dragonball-api.com/api/characters";
     
     fetch(apiUrl)
     .then(response => response.json()) 
@@ -33,8 +22,15 @@ const getCharacter = (url) => {
     .catch(error => console.error("Error en la solicitud:", error));
 }
 
+const getCharactersearch = (url) => {
+    apiUrl = url;
+    fetch(apiUrl)
+    .then(response => response.json()) 
+    .then(data => processCharacter(data)) 
+    .catch(error => console.error("Error en la solicitud:", error));
+}
+
 const processCharacter = (characters) => {
-    console.log(characters);
     $("#charactersCards").html("");
     characters.forEach(character => {
         $("#charactersCards").append(`<div class="card">
@@ -73,6 +69,12 @@ const processCharacter = (characters) => {
     });
 }
 
+
+
+
+
+
+
 const activeMenu = () =>{
     $("#filters").toggle();
 }
@@ -87,14 +89,30 @@ const processFrm =() =>{
         let gender = $("#frmGender").val();
         let group = $("#frmGroup").val();
 
-        console.log(name);
-        console.log(race);
-        console.log(gender);
-        console.log(group);
+        let endPoint = "https://dragonball-api.com/api/characters?";
+        let search ="";
 
-        let endPoint = "https://dragonball-api.com/api/characters?name="+name;
+        if (!name=="") {
+            search = search+"&name="+name;
+        }
+        if (!race=="") {
+            search = search+"&race="+race;
+        }
+        if (!gender=="") {
+            search = search+"&gender="+gender;
+        }
+        if (!group=="") {
+            search = search+"&affiliation="+group;
+        }
 
-        getCharacter(endPoint);
+        search = search.slice(1);
+
+     
+        
+
+        $("#filters").toggle();
+        $("#frm")[0].reset();
+        getCharactersearch(endPoint+search);
     })
 }
 

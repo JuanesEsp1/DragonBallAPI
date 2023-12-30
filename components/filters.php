@@ -32,7 +32,7 @@
                 <label  class="subtitle" >Group</label>
                 <select id="frmGroup" class="w-full">
                     <option ></option>
-                    <option value="Z Fighters">Z Fighters</option>
+                    <option value="Z Fighter">Z Fighters</option>
                     <option value="Army of Frieza">Armyn of Frieza</option>
                     <option value="Freelancer">Freelancer</option>
                 </select>
